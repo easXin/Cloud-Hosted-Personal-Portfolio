@@ -101,6 +101,7 @@ export default function Background() {
 
   return (
     <>
+      <div className="bg-image" />
       <div className="bg-gradient" />
       <canvas ref={canvasRef} className="bg-canvas" />
     </>

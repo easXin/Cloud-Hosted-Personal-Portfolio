@@ -50,6 +50,26 @@ function ProjectIcon({ name }: { name: Project['icon'] }) {
           <line x1="10" y1="9" x2="9" y2="9" />
         </svg>
       );
+    case 'personal':
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <line x1="3" y1="8" x2="21" y2="8" />
+          <line x1="7" y1="6" x2="7.01" y2="6" />
+          <line x1="10" y1="6" x2="10.01" y2="6" />
+          <line x1="13" y1="6" x2="13.01" y2="6" />
+          <path d="M15 13l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
+        </svg>
+      );
+    case 'tracker':
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h4l2-4 3 8 2-4h7" />
+          <path d="M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9" />
+          <path d="M12 3c-2.5 2.5-3.5 5.5-3.5 9s1 6.5 3.5 9" />
+        </svg>
+      );
   }
 }
 
@@ -60,8 +80,7 @@ export default function FeaturedProjects() {
       <div className="section-label">04 — Featured Projects</div>
       <h2 className="section-title">Featured projects</h2>
       <p className="section-sub">
-        Selected work delivered in production at Leidos and JPMorgan Chase. Project details are scoped to
-        what can be publicly described; deeper technical discussion is available on request.
+        Selected enterprise software work from Leidos and JPMorgan Chase, plus a personal AWS-hosted portfolio project demonstrating React, TypeScript, Vite, and cloud deployment. Details are limited to publicly shareable information.
       </p>
       <div className="projects-grid">
         {projects.map((p) => (

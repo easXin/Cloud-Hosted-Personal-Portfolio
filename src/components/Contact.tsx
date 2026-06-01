@@ -4,7 +4,7 @@ export default function Contact() {
   const ref = useReveal<HTMLElement>();
   return (
     <section id="contact" ref={ref} className="reveal contact-section">
-      <div className="section-label">06 — Contact</div>
+      <div className="section-label">05 — Contact</div>
       <h2>Get in touch</h2>
       <p>
         Open to full-stack <strong style={{ color: 'var(--text)' }}>.NET developer</strong> roles —

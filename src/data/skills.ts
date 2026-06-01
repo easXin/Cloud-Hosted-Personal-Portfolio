@@ -1,6 +1,6 @@
 export type SkillCategory = {
   title: string;
-  icon: 'code' | 'monitor' | 'server' | 'database' | 'layers' | 'tool';
+  icon: 'code' | 'monitor' | 'server' | 'database' | 'layers' | 'tool' | 'cloud';
   items: string[];
 };
 
@@ -42,7 +42,6 @@ export const skillCategories: SkillCategory[] = [
     icon: 'tool',
     items: [
       'Git',
-      'Azure DevOps',
       'CI/CD',
       'Swagger',
       'Postman',
@@ -50,6 +49,20 @@ export const skillCategories: SkillCategory[] = [
       'NUnit',
       'Claude Code',
       'Sourcegraph Cody',
+    ],
+  },
+  {
+    title: 'Cloud Exposure',
+    icon: 'cloud',
+    items: [
+      'Azure',
+      'AWS S3',
+      'CloudFront',
+      'Route 53',
+      'ACM',
+      'API Gateway',
+      'Lambda',
+      'DynamoDB',
     ],
   },
 ];

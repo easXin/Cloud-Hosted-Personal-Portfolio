@@ -2,7 +2,7 @@ export default function Introduction() {
   return (
     <section id="introduction" className="intro">
       <div className="intro-greet">// Introduction</div>
-      <h1 className="intro-name">Dengxin (Eric) Wang</h1>
+      <h1 className="intro-name">Eric Wang</h1>
       <h2 className="intro-title">Software Developer — .NET &amp; Full-Stack</h2>
       <p className="intro-desc">
         Software developer with <strong>3+ years of experience</strong> building and modernizing
@@ -19,7 +19,7 @@ export default function Introduction() {
         </span>
         <span className="badge clearance">
           <span className="dot" />
-          Active Secret Clearance
+          Active U.S. Secret Security Clearance
         </span>
         <span className="badge">U.S. Citizen</span>
         <span className="badge">Mechanicsburg, PA</span>
