@@ -25,7 +25,7 @@ const technicalSkillIconMap = {
     default: DefaultIcon,
 };
 
-export default function TechnicalSkillIcon({ name }: TechnicalSkillIconProps) {
+export default function TechSkillIcon({ name }: TechnicalSkillIconProps) {
     const Icon = technicalSkillIconMap[name] ?? technicalSkillIconMap.default;
     return <Icon />;
 }

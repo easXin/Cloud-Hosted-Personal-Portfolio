@@ -1,8 +1,8 @@
-import { iconProps } from '../constants/IconConfig';
+import { outlineIconProps } from '../constants/IconConfig';
 
 export default function ServerIcon() {
     return (
-        <svg {...iconProps}>
+        <svg {...outlineIconProps}>
             <rect x="2" y="2" width="20" height="8" rx="2" />
             <rect x="2" y="14" width="20" height="8" rx="2" />
             <line x1="6" y1="6" x2="6.01" y2="6" />
