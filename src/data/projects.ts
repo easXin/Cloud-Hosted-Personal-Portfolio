@@ -1,10 +1,22 @@
+export type ProjectIconNames =
+  'grid'
+  | 'zap'
+  | 'package'
+  | 'shield'
+  | 'cog'
+  | 'report'
+  | 'personal'
+  | 'tracker'
+  | 'media'
+  | 'default';
+
 export type Project = {
   domain: string;
   title: string;
   description: string;
   impact: string;
   stack: string[];
-  icon: 'grid' | 'zap' | 'package' | 'shield' | 'cog' | 'report' | 'personal' | 'tracker' | 'media';
+  icon: ProjectIconNames;
   liveUrl?: string;
   githubUrl?: string;
 };
@@ -17,7 +29,7 @@ export const projects: Project[] = [
       'End-to-end implementation of inventory-related workflow features spanning React/TypeScript state management, ASP.NET Web API integration, SQL Server data access, and event-driven backend processing.',
     impact: 'Delivered across 4+ application layers in a cleared environment.',
     stack: ['React', 'TypeScript', 'ASP.NET Web API', 'SQL Server', 'RabbitMQ'],
-    icon: 'cog',
+    icon: 'grid',
   },
   {
     domain: 'Enterprise Logistics',
@@ -72,6 +84,8 @@ export const projects: Project[] = [
     impact: 'Deployed to AWS using S3, CloudFront, Route 53, and ACM.',
     stack: ['React', 'TypeScript', 'Vite', 'AWS', 'S3', 'CloudFront', 'Route 53', 'ACM'],
     icon: 'personal',
+    liveUrl: 'https://covid19-tracker-6ae25.web.app/',
+    githubUrl: 'https://github.com/easXin/Cloud-Hosted-Personal-Portfolio-Website',
   },
   {
     domain: 'EARLY PERSONAL PROJECT',
