@@ -8,27 +8,28 @@ const links = [
   { id: 'contact', label: 'Contact' },
 ];
 
-export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string>('introduction');
-  const isClickScrolling = useRef(false);
+  export default function Nav() {
+    const [scrolled, setScrolled] = useState(false);
+    const [active, setActive] = useState<string>('introduction');
+    const isClickScrolling = useRef(false);
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
+    const scrollToSection = (id: string) => {
+      const el = document.getElementById(id);
 
-    if (el) {
-      isClickScrolling.current = true;
-      setActive(id);
+      if (el) {
+        isClickScrolling.current = true;
+        setActive(id);
 
-      el.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+        window.history.pushState(null, '', `/${id}`);
 
-      // smooth scroll 结束后，再允许 observer 接管 active 状态
-      window.setTimeout(() => {
-        isClickScrolling.current = false;
-      }, 800);
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
+        window.setTimeout(() => {
+          isClickScrolling.current = false;
+        }, 800);
     }
   };
 
@@ -60,6 +61,22 @@ export default function Nav() {
     };
   }, []);
 
+  useEffect(() => {
+    const sectionId = window.location.pathname.replace('/', '');
+
+    if (!sectionId) return;
+
+    const el = document.getElementById(sectionId);
+
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }, 100);
+    }
+  }, []);
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-inner">
