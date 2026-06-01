@@ -1,5 +1,5 @@
-import { useReveal } from '../hooks/useReveal';
-import { experiences } from '../data/experience';
+import { useReveal } from '../../../hooks/useReveal';
+import { experiences } from '../../../data/experience';
 
 export default function WorkExperience() {
   const ref = useReveal<HTMLElement>();

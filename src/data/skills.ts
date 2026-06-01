@@ -1,16 +1,16 @@
-export type SkillIconName =
-  'code'
-  | 'monitor'
-  | 'server'
-  | 'database'
-  | 'layers'
-  | 'tool'
-  | 'cloud'
-  | 'default';
+export type SkillIcon =
+| 'code'
+| 'monitor'
+| 'server'
+| 'database'
+| 'layers'
+| 'tool'
+| 'cloud'
+| 'default';
 
 export type SkillCategory = {
   title: string;
-  icon: SkillIconName;
+  icon: SkillIcon;
   items: string[];
 };
 

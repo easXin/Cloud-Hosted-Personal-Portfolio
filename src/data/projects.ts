@@ -1,14 +1,14 @@
-export type ProjectIconNames =
-  'grid'
-  | 'zap'
-  | 'package'
-  | 'shield'
-  | 'cog'
-  | 'report'
-  | 'personal'
-  | 'tracker'
-  | 'media'
-  | 'default';
+export type ProjectIcon =
+| 'grid'
+| 'zap'
+| 'package'
+| 'shield'
+| 'cog'
+| 'report'
+| 'personal'
+| 'tracker'
+| 'media'
+| 'default';
 
 export type Project = {
   domain: string;
@@ -16,7 +16,7 @@ export type Project = {
   description: string;
   impact: string;
   stack: string[];
-  icon: ProjectIconNames;
+  icon: ProjectIcon;
   liveUrl?: string;
   githubUrl?: string;
 };

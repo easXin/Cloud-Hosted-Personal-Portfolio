@@ -1,5 +1,5 @@
-import { useReveal } from '../hooks/useReveal';
-import { skillCategories } from '../data/skills';
+import { useReveal } from '../../../hooks/useReveal';
+import { skillCategories } from '../../../data/skills';
 import TechnicalSkillIcon from './TechnicalSkillIcon';
 
 export default function TechnicalSkills() {

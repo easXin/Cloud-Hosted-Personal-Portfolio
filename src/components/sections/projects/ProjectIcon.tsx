@@ -1,4 +1,4 @@
-import { type Project } from '../data/projects';
+import { type Project } from '../../../data/projects';
 import {
     CogIcon,
     GridIcon,
@@ -10,7 +10,7 @@ import {
     TrackerIcon,
     ZapIcon,
     DefaultIcon
-} from './icons';
+} from '../../icons';
 
 type ProjectIconProps = {
     name: Project['icon'];
@@ -30,6 +30,6 @@ const projectIconMap = {
 };
 
 export default function ProjectIcon({ name }: ProjectIconProps) {
-    const Icon = projectIconMap[name] ?? projectIconMap['default'];
+    const Icon = projectIconMap[name] ?? projectIconMap.default;
     return <Icon />;
 }

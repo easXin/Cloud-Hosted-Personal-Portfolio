@@ -1,4 +1,4 @@
-import { type SkillCategory } from '../data/skills';
+import { type SkillCategory } from '../../../data/skills';
 import {
     CodeIcon,
     MonitorIcon,
@@ -8,7 +8,7 @@ import {
     ToolIcon,
     CloudIcon,
     DefaultIcon
-} from './icons';
+} from '../../icons';
 
 type TechnicalSkillIconProps = {
     name: SkillCategory['icon'];
@@ -26,6 +26,6 @@ const technicalSkillIconMap = {
 };
 
 export default function TechnicalSkillIcon({ name }: TechnicalSkillIconProps) {
-    const Icon = technicalSkillIconMap[name] ?? technicalSkillIconMap['default'];
+    const Icon = technicalSkillIconMap[name] ?? technicalSkillIconMap.default;
     return <Icon />;
 }

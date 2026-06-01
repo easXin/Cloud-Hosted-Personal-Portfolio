@@ -1,11 +1,11 @@
-import Background from './components/Background';
-import Nav from './components/Nav';
-import Introduction from './components/Introduction';
-import TechnicalSkills from './components/TechnicalSkills';
-import WorkExperience from './components/WorkExperience';
-import FeaturedProjects from './components/FeaturedProjects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Background from './components/layout/Background';
+import Nav from './components/layout/Nav';
+import Introduction from './components/sections/introduction/Introduction';
+import TechnicalSkills from './components/sections/skills/TechnicalSkills';
+import WorkExperience from './components/sections/experience/WorkExperience';
+import FeaturedProjects from './components/sections/projects/FeaturedProjects';
+import Contact from './components/sections/contact/Contact';
+import Footer from './components/layout/Footer';
 
 export default function App() {
   return (

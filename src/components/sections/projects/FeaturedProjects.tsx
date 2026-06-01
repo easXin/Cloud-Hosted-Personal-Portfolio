@@ -1,5 +1,5 @@
-import { useReveal } from '../hooks/useReveal';
-import { projects } from '../data/projects';
+import { useReveal } from '../../../hooks/useReveal';
+import { projects } from '../../../data/projects';
 import ProjectIcon from './ProjectIcon';
 
 export default function FeaturedProjects() {
