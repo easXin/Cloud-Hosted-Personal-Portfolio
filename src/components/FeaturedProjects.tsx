@@ -70,6 +70,15 @@ function ProjectIcon({ name }: { name: Project['icon'] }) {
           <path d="M12 3c-2.5 2.5-3.5 5.5-3.5 9s1 6.5 3.5 9" />
         </svg>
       );
+    case 'media':
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="5" width="18" height="12" rx="2" />
+          <polygon points="10 9 15 12 10 15 10 9" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+      );
   }
 }
 
@@ -94,6 +103,21 @@ export default function FeaturedProjects() {
             <h3 className="project-title">{p.title}</h3>
             <p className="project-desc">{p.description}</p>
             <div className="project-impact">↗ {p.impact}</div>
+            {(p.liveUrl || p.githubUrl) && (
+            <div className="project-links">
+              {p.liveUrl && (
+                <a href={p.liveUrl} target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              )}
+
+              {p.githubUrl && (
+                <a href={p.githubUrl} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+              )}
+            </div>
+          )}
             <div className="project-stack">
               {p.stack.map((s) => (
                 <span key={s} className="stack-tag">

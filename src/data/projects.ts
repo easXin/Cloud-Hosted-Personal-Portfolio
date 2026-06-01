@@ -4,7 +4,9 @@ export type Project = {
   description: string;
   impact: string;
   stack: string[];
-  icon: 'grid' | 'zap' | 'package' | 'shield' | 'cog' | 'report' | 'personal' | 'tracker';
+  icon: 'grid' | 'zap' | 'package' | 'shield' | 'cog' | 'report' | 'personal' | 'tracker' | 'media';
+  liveUrl?: string;
+  githubUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -79,14 +81,18 @@ export const projects: Project[] = [
     impact: 'Integrated public API data with chart and map visualizations.',
     stack: ['React', 'Material UI', 'Fetch API', 'React-chartjs-2', 'Firebase'],
     icon: 'tracker',
+    liveUrl: 'https://covid19-tracker-6ae25.web.app/',
+    githubUrl: 'https://github.com/easXin/covid-19-tracker',
   },
   {
     domain: 'EARLY PERSONAL PROJECT',
-    title: 'ASP.NET Reporting Tool',
+    title: 'Netflix Clone',
     description:
       'Built a React-based Netflix-style frontend application with reusable UI components, responsive layout, and Firebase Hosting deployment.',
     impact: 'Strengthened React, responsive UI, API integration, and Firebase deployment skills.',
     stack: ['React', 'JavaScript', 'CSS', 'HTML', 'Firebase'],
-    icon: 'personal',
+    icon: 'media',
+    liveUrl: 'https://netflix-clone-3ace6.web.app/',
+    githubUrl: 'https://github.com/easXin/netflix-app',
   },
 ];

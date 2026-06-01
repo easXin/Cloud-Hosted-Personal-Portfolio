@@ -416,6 +416,29 @@ section {
   margin-bottom: 16px;
   flex: 1;
 }
+.project-links {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(96, 165, 250, 0.08);
+  transition: all 0.2s ease;
+}
+
+.project-links a:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+  background: rgba(96, 165, 250, 0.14);
+}
 .project-impact {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
