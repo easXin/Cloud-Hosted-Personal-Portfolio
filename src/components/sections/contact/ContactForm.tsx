@@ -2,7 +2,7 @@ type ContactFormState = {
     name: string;
     email: string;
     message: string;
-    companyWebsite: string;
+    websiteUrl: string;
 };
 
 type ContactFormStatus = 'idle' | 'loading' | 'success' | 'error';
@@ -26,8 +26,8 @@ export default function ContactForm({
     <form className="contact-form" onSubmit={onSubmit}>
         <input
             type="text"
-            name="companyWebsite"
-            value={form.companyWebsite}
+            name="websiteUrl"
+            value={form.websiteUrl}
             onChange={onChange}
             className="honeypot"
             tabIndex={-1}

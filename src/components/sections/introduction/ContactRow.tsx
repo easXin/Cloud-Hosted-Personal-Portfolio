@@ -7,9 +7,9 @@ export default function ContactRow() {
             {contactRow.map((c,idx) => (
                 <a
                     className={`btn ${c.icon === 'email' ? 'btn-primary' : 'btn-ghost'}`}
-                    href={ c.icon === 'email' ? '#contact' :c.toHref}
+                    href={ c.icon === 'email' ? '/contact' :c.toHref}
                     key={idx}
-                    target="_blank"
+                    target={ c.icon === 'email' ? '_self': '_blank'}
                     rel="noopener">
                         <ContactIcon name={c.icon} />
                     {c.text}

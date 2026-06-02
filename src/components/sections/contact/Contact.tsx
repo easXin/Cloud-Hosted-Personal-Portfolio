@@ -11,13 +11,13 @@ export default function Contact() {
     name: '',
     email: '',
     message: '',
-    companyWebsite: '',
+    websiteUrl: '',
   });
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const apiUrl = '';
+  const apiUrl = import.meta.env.VITE_CONTACT_API_URL ?? '';
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -28,6 +28,11 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
+
+    if (status === 'error') {
+      setStatus('idle');
+      setErrorMessage('');
+    }
   };
 
   const isValidEmail = (email: string) => {
@@ -57,18 +62,8 @@ export default function Contact() {
     }
 
     if (!apiUrl) {
-      setStatus('loading');
-
-      window.setTimeout(() => {
-        setStatus('success');
-        setForm({
-          name: '',
-          email: '',
-          message: '',
-          companyWebsite: '',
-        });
-      }, 700);
-
+      setStatus('error');
+      setErrorMessage('Contact service is not configured yet.');
       return;
     }
 
@@ -84,26 +79,39 @@ export default function Contact() {
           name: form.name.trim(),
           email: form.email.trim(),
           message: form.message.trim(),
-          companyWebsite: form.companyWebsite,
+          websiteUrl: form.websiteUrl,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit contact form.');
+        const errorData = await response.json().catch(() => null);
+
+          if (response.status === 429) {
+            throw new Error(
+              errorData?.message ||
+                'This email was used recently. Please wait a few minutes before sending another message.'
+            );
+          }
+
+        throw new Error(
+          errorData?.message || 'Failed to submit contact form.'
+        );
       }
 
       setStatus('success');
+      setErrorMessage('');
       setForm({
         name: '',
         email: '',
         message: '',
-        companyWebsite: '',
+        websiteUrl: '',
       });
     } catch {
       setStatus('error');
       setErrorMessage('Something went wrong. Please try again later.');
     }
   };
+
   return (
     <section id="contact" ref={ref} className="reveal contact-section">
       <ContactContent />

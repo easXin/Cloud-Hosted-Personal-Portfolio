@@ -82,9 +82,9 @@ export const projects: Project[] = [
     description:
       'Developed a responsive personal portfolio website using React, TypeScript, and Vite to showcase software engineering experience, technical skills, and project work.',
     impact: 'Deployed to AWS using S3, CloudFront, Route 53, and ACM.',
-    stack: ['React', 'TypeScript', 'Vite', 'AWS', 'S3', 'CloudFront', 'Route 53', 'ACM'],
+    stack: [ 'React', 'TypeScript', 'Vite', 'S3', 'CloudFront', 'API Gateway', 'Lambda', 'DynamoDB', 'SES', 'Cloudflare', 'ACM'],
     icon: 'personal',
-    liveUrl: 'https://covid19-tracker-6ae25.web.app/',
+    liveUrl: 'https://easxin.dev/',
     githubUrl: 'https://github.com/easXin/Cloud-Hosted-Personal-Portfolio-Website',
   },
   {

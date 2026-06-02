@@ -1,52 +1,76 @@
-# Personal Portfolio Website
+# Cloud-Hosted Personal Portfolio
 
-A personal developer portfolio website built with React, TypeScript, and Vite to showcase my software engineering experience, technical skills, featured projects, resume, and contact information. The site is designed as a professional portfolio for full-stack and .NET software development opportunities.
+This is my personal developer portfolio site, built to showcase my software engineering experience, technical skills, selected projects, resume, and contact information.
+
+The frontend is built with React, TypeScript, and Vite. The site is deployed on AWS using S3 and CloudFront, with a custom domain and HTTPS support. I also added a serverless contact form backed by API Gateway, Lambda, DynamoDB, and SES.
 
 ## Live Demo
 
-Coming soon.
+[Link](https://easxin.dev)
 
-## Project Overview
+## Why I Built This
 
-This project was created to present my professional background, selected enterprise software work, personal projects, and technical skill set in a clean, responsive, and cloud-deployment-ready website. The portfolio highlights experience with C#/.NET, React, TypeScript, SQL Server, REST APIs, cloud exposure, and enterprise application development.
+I wanted a portfolio that was more than a static resume page. The goal was to build and deploy a small but realistic cloud-hosted web application that includes frontend structure, cloud hosting, HTTPS, custom domain setup, and a working backend contact flow.
 
-The project is currently being prepared for AWS deployment using S3, CloudFront, Route 53, and ACM.
+The site highlights my experience with full-stack development, .NET-related enterprise work, React/TypeScript UI development, SQL/data-access work, and cloud/serverless deployment concepts.
 
 ## Tech Stack
 
+# Frontend
 - React
 - TypeScript
 - Vite
 - HTML
 - CSS
+
+# Cloud / Backend
 - AWS S3
-- CloudFront
-- Route 53
-- ACM
+- Amazon CloudFront
+- AWS Certificate Manager
+- API Gateway
+- AWS Lambda
+- DynamoDB
+- Amazon SES
+- Cloudflare DNS
 
 ## Features
 
 - Responsive single-page portfolio layout
-- Professional introduction and contact section
-- Technical skills organized by category
-- Work experience timeline
-- Featured project cards for enterprise and personal projects
+- Custom dark technical theme
+- Section-based navigation with clean routing behavior
+- Introduction, skills, work experience, projects, and contact sections
 - Resume PDF link
 - LinkedIn and GitHub links
-- Custom dark theme with animated background elements
-- Prepared for AWS static hosting and CDN delivery
+- Custom 404 page
+- CloudFront SPA fallback support for direct URL refreshes
+- Serverless contact form
+- Contact message storage in DynamoDB
+- Email notifications through Amazon SES
+- Basic abuse protection with validation, honeypot field, CORS configuration, and DynamoDB-based rate limiting
 
-## Project Sections
+## Cloud Deployment
 
-- About
-- Technical Skills
-- Work Experience
-- Featured Projects
-- Contact
+The frontend is built with Vite and deployed as static files to S3. CloudFront serves the site as the CDN layer and handles HTTPS traffic for the custom domain.
 
-## AWS Deployment Plan
+The contact form is handled separately through a serverless backend:
+                                            
+React Contact Form -> API Gateway -> Lambda ->  DynamoDB + SES Email Service Provider                                
 
-The frontend application is built with Vite and generates static production files in the `dist` folder. The deployment plan is:
+Lambda validates the submitted form data, applies basic rate limiting, stores the message in DynamoDB, and sends an email notification through SES.
+
+## Project Structure
+src/
+  components/
+    layout/
+    sections/
+    icons/
+  data/
+  hooks/
+  styles/
+public/
+  resume and static assets
+
+The content is organized through typed data files so the UI components stay reusable and easier to maintain.
 
 1. Build the project with Vite
 2. Upload the generated `dist` files to AWS S3
@@ -56,18 +80,17 @@ The frontend application is built with Vite and generates static production file
 
 ## What I Practiced
 
-- Building a production-ready React and TypeScript frontend
-- Structuring reusable UI components
-- Organizing portfolio content with typed data files
-- Designing a responsive dark-themed developer portfolio
-- Preparing a static frontend application for AWS cloud deployment
-- Creating a professional project presentation for recruiters and hiring managers
-
-## Project Status
-
-This project is currently in progress. The frontend website has been built locally, and AWS deployment is being configured.
+- Building a production-ready React/TypeScript frontend
+- Splitting UI into reusable components
+- Managing typed project and profile data
+- Deploying a static frontend to AWS S3 and CloudFront
+- Configuring HTTPS and a custom domain
+- Building a small serverless backend with API Gateway and Lambda
+- Storing contact submissions in DynamoDB
+- Sending email notifications with SES
+- Handling CORS, validation, honeypot filtering, and basic rate limiting
 
 ## Author
 
-**EasXin**  
+**EasXin**
 GitHub: [easXin](https://github.com/easXin)
