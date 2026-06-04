@@ -10,10 +10,10 @@ export const introduction = {
 };
 
 export const profileBadges = {
-    availability: 'Open to new opportunities',
+    availability: 'Open to hybrid and Remote Opportunities',
     clearance: 'Active U.S. Secret Security Clearance',
     citizenship: 'U.S. Citizen',
-    location: 'Mechanicsburg, PA',
+    location: 'New York, NY',
 };
 
 export const techSkills = {
