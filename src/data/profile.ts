@@ -10,7 +10,7 @@ export const introduction = {
 };
 
 export const profileBadges = {
-    availability: 'Open to hybrid and Remote Opportunities',
+    availability: 'Open to Hybrid and Remote Opportunities',
     clearance: 'Active U.S. Secret Security Clearance',
     citizenship: 'U.S. Citizen',
     location: 'New York, NY',
