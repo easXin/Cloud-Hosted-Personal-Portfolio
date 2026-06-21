@@ -18,28 +18,22 @@ export const experiences: Experience[] = [
     start: 'Dec 2023',
     end: 'Present',
     context:
-      'Large-scale enterprise logistics platform supporting government and defense-related operational workflows in a cleared environment. Responsibilities span API development, legacy modernization, React/TypeScript UI work, and SQL Server data-access logic.',
+      'Contributed to large-scale enterprise logistics systems in a cleared environment, supporting warehouse,inventory, transportation, and supply-chain workflows through ASP.NET Core API development, React/TypeScript UIenhancements, SQL Server data-access logic, and legacy system modernization.',
     bullets: [
       {
-        html: 'Implemented <strong>end-to-end inventory workflow enhancements</strong> across multiple enterprise logistics applications, spanning React/TypeScript state management, ASP.NET Web API integration, SQL Server data access, and event-driven backend processing across <strong>4+ application layers</strong>.',
+        html: 'Designed and implemented the integration of a <strong>RabbitMQ-based event-driven workflow</strong> from a <strong>microservice</strong> into a <strong>legacy monolithic logistics application</strong>, decoupling inventory processing from existing logic and <strong>enabling asynchronous execution without disrupting legacy functionality</strong>.',
       },
       {
-        html: 'Refactored LINQ and Entity Framework query logic to optimize enterprise data retrieval, <span class="metric">reducing grid load time by 80–90% (10+ seconds to 1–2 seconds)</span>.',
+        html: 'Optimized inventory grid performance by building a <strong>custom WhereIn LINQ extension</strong> and pushing <strong>Entity Framework filters</strong> into <strong>SQL Server before materialization</strong>, <span class="metric">reducing grid load time from 10+ sec to 1–2 sec</span>.',
       },
       {
-        html: 'Improved reliability of complex <strong>React/TypeScript</strong> and <strong>Kendo UI</strong> workflows by preserving user selections across grid interactions and refresh, reducing selection-loss issues in multi-step processes.',
+        html: 'Implemented <strong>Redis caching</strong> for <strong>inventory-type dropdown data</strong>, querying <strong>SQL Server only when lookup criteria changed</strong> to reduce redundant database reads and improve grid responsiveness.',
       },
       {
-        html: 'Served as the <strong>primary assigned developer</strong> for a legacy microservice, owning defect resolution, enhancements, modernization tasks, and production-readiness improvements across multiple release cycles.',
+        html: 'Built a reusable, <strong>configuration-driven Enterprise Rollup React component</strong> with <strong>dynamic cascading filters</strong>, generalizing it into the <strong>DLMS frontend library</strong> for cross-team reuse and standardized <strong>DLMS transaction file search workflows</strong>.',
       },
       {
-        html: 'Designed and delivered a <strong>reusable React component</strong> for a shared UI component library, reducing duplicated frontend implementation effort across internal applications.',
-      },
-      {
-        html: 'Supported <strong>root-cause analysis</strong> for integration and deployment issues by collaborating with senior developers, QA, and DevOps across frontend, backend, database, and deployment layers.',
-      },
-      {
-        html: 'Used AI-assisted tools (<strong>Claude Code</strong>, <strong>Sourcegraph Cody</strong>) to accelerate legacy code analysis, debugging, and implementation planning while manually reviewing and testing every change before delivery.',
+        html: 'Supported <strong>production stability</strong> by troubleshooting <strong>cross-layer</strong> issues across application, database, messaging, and deployment environments, using <strong>logs, debugging, and release validation to verify stable deployments</strong>.',
       },
     ],
   },
@@ -53,13 +47,16 @@ export const experiences: Experience[] = [
       'Enterprise financial applications supporting reporting, data processing, and legacy application functionality within an Agile Scrum team.',
     bullets: [
       {
-        html: 'Improved legacy application data-loading performance by refactoring SQL queries and batch-processing logic, <span class="metric">reducing processing latency by over 90% (~2 minutes to ~10 seconds)</span>.',
+        html: 'Replaced <strong>row-by-row report processing</strong> with <strong>batch-processing logic</strong> and optimized SQL queries, <strong>reducing legacy financial reporting latency by over 90% from approximately 2 minutes to 10 seconds</strong>.',
       },
       {
-        html: 'Contributed to an <strong>ASP.NET reporting tool</strong> in C# integrating with enterprise data sources to support recurring internal reporting workflows for downstream teams.',
+        html: 'Enhanced <strong>C#/ASP.NET reporting workflows</strong> using <strong>centralized data warehouse sources</strong> and automated daily report delivery through a <strong>scheduled shell script task</strong>, reducing manual effort for <strong>daily securities reporting</strong>.',
       },
       {
-        html: 'Added <strong>NUnit test coverage</strong> across multiple applications to improve regression coverage, support code-quality validation, and strengthen reliability across release cycles.',
+        html: 'Built a <strong>project-wide NUnit automated test suite</strong> for a legacy C# application, <span class="metric">increasing SonarQube coverageto 65%–70%</span> and reducing code quality and vulnerability findings to improve release readiness.',
+      },
+      {
+        html: 'Supported <strong>UAT deployment validation</strong> through <strong>Jenkins release processes</strong>, assisting with environment checks, troubleshooting, and <strong>Docker-based runtime verification</strong>.',
       },
     ],
   },
